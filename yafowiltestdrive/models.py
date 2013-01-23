@@ -26,3 +26,24 @@ class MyModel(Base):
     def __init__(self, name, value):
         self.name = name
         self.value = value
+
+
+class Users(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, unique=True)
+    token = Column(Text)
+
+    def __init__(self, name, value):
+        self.name = name
+
+
+class Messages(Base):
+    __tablename__ = 'messages'
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, unique=True)
+    value = Column(Integer)
+
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value

@@ -126,7 +126,7 @@ def form_view(request):
         u'form',
         name='username',
         props={
-            'action': 'http://192.168.2.111:6543/form'
+            'action': 'http://127.0.0.1:6543/form'
         },
         custom={'myvalidation': dict(extractor=[myvalidator])}
     )
@@ -216,8 +216,8 @@ def messages_view(request):
     print("status:" + str(r.status_code))
     # make result beautiful
     print r
-    import pdb
-    pdb.set_trace()
+    #import pdb
+    #pdb.set_trace()
     list = r.json()  # [0]
 
     return {'messages': list}
